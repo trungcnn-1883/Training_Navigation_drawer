@@ -31,6 +31,8 @@ Dùng trên tablet, desktop
 Chỉ hiện ở 1 phần màn hình, phần còn lại không tương tác được
 Thường dùng cho điện thoại
 
+<img src="navi_f4.png" height="150">
+
 ### c. Loại Bottom
 Là loại đặc biệt của modal, hiển thị từ dưới lên
 Thường dùng với bottom app bar
@@ -60,11 +62,13 @@ Ngăn kéo có thể dismiss: Một ngăn kéo có thể dismiss tập trung và
 ### b. Loại Modal
 - Luôn block tương tác với phần còn lại của app bằng một lớp phủ. Dùng chủ yếu cho mobile
 - Mở bằng cách nhấn vào navigation icon ở top bar
-
+<img src="navi_f1.png" height="150">
 - Dismiss bằng cách:
 + Nhấn vào item
 + Chạm vào vùng mờ
 + Vuốt từ phải sang trái
+
+<img src="navi_f2.png" height="150">
 
 
 
@@ -74,7 +78,7 @@ Ngăn kéo có thể dismiss: Một ngăn kéo có thể dismiss tập trung và
 
 ### 6. Trạng thái
 
-
+<img src="navi_f3.png" height="200">
 1. Activated
 Màn hình hiện tại, hoặc cha mẹ của nó, được thể hiện với trạng thái kích hoạt.
 Trạng thái này phải có độ tương phản thị giác mạnh từ các mục chưa được kích hoạt. Mỗi lần chỉ có thể kích hoạt một mục trong ngăn kéo điều hướng.
