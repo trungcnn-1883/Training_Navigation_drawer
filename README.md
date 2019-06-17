@@ -36,11 +36,15 @@ Không nên dùng chung với 1 cái thành phần chính khác, như bottom nav
 
 - Dùng trên tablet, desktop
 
+<img src="navi_f8.png" height="250">
+
 ### b.Loại modal
 
 Chỉ hiện ở 1 phần màn hình, phần còn lại không tương tác được
 
 Thường dùng cho điện thoại
+
+<img src="navi_f7.png" height="250">
 
 ### c. Loại Bottom
 
