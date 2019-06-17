@@ -1,6 +1,5 @@
 package com.example.training_navigation_;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GravityCompat;
@@ -30,8 +29,9 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
+        // For translation only
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
@@ -40,10 +40,31 @@ public class MainActivity extends AppCompatActivity
                 constraintLayout.setTranslationX(slideX);
             }
         };
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+
+        // For translation and scale
+        ActionBarDrawerToggle toggle1 = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+
+            private float scaleFactor = 8f;
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                float slideX = drawerView.getWidth() * slideOffset;
+                Log.d("Slide", "onDrawerSlide: " + slideOffset);
+                constraintLayout.setTranslationX(slideX);
+                constraintLayout.setScaleX(1 - (slideOffset / scaleFactor));
+                constraintLayout.setScaleY(1 - (slideOffset / scaleFactor));
+            }
+        };
+
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
+
+        // Use this to translation and scale
+        drawer.addDrawerListener(toggle1);
+        toggle1.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        drawer.setScrimColor(Color.TRANSPARENT);
     }
 
     @Override
