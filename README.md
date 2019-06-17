@@ -42,13 +42,13 @@ Chỉ hiện ở 1 phần màn hình, phần còn lại không tương tác đư
 
 Thường dùng cho điện thoại
 
-<img src="navi_f3.png" height="150">
-
 ### c. Loại Bottom
 
 Là loại đặc biệt của modal, hiển thị từ dưới lên
 
 Thường dùng với bottom app bar
+
+<img src="navi_f3.png" height="250">
 
 ### 5. Cấu trúc
 Một list của các item dưới dạng bảng, có thể thêm header hoặc divider
@@ -129,8 +129,8 @@ Không hoạt động là trạng thái mặc định cho các mục trong ngăn
 
 3.Focus
 
-4. Press
+4.Press
 
-5. Hover
+5.Hover
 
 ## II. Triển khai
