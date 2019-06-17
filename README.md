@@ -141,7 +141,8 @@ Không hoạt động là trạng thái mặc định cho các mục trong ngăn
 
 Xem code demo
 
-- Sử dụng DrawerLayout,có thể custom cho nội dung, c
+- Sử dụng DrawerLayout,có thể custom cho nội dung, cách di chuyển của content
+
 
 
 
