@@ -138,3 +138,10 @@ Không hoạt động là trạng thái mặc định cho các mục trong ngăn
 5.Hover
 
 ## II. Triển khai
+
+Xem code demo
+
+- Sử dụng DrawerLayout,có thể custom cho nội dung, c
+
+
+
