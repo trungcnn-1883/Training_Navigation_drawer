@@ -1,8 +1,11 @@
 package com.example.training_navigation_;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -10,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -22,13 +26,24 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final ConstraintLayout constraintLayout = findViewById(R.id.content_main_cl);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                float slideX = drawerView.getWidth() * slideOffset;
+                Log.d("Slide", "onDrawerSlide: " + slideOffset);
+                constraintLayout.setTranslationX(slideX);
+            }
+        };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        drawer.setScrimColor(Color.TRANSPARENT);
     }
 
     @Override
